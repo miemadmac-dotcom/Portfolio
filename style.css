@@ -1,8 +1,3 @@
-/* =========================================
-   MIE MADSEN STUDIO - MASTER STYLESHEET
-   Design: Editorial / Minimalist Studio
-   ========================================= */
-/* --- 1. GENERELT --- */
 * {
     margin: 0;
     padding: 0;
@@ -10,32 +5,55 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Gør at "Kontakt" scroller pænt */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #F9F7F2; /* Din lyse beige farve */
-    color: #1a1a1a; /* Sort/Mørk grå tekst til standard sider */
+    color: #1a1a1a;
+    background-color: #F9F7F2;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-
-/* Links generelt */
 a {
     text-decoration: none;
     color: inherit;
     transition: opacity 0.3s, color 0.3s;
 }
-a:hover { 
-    color: #B4B581; /* Din grønne farve ved hover */
-    opacity: 1; 
+
+a:hover {
+    color: #B4B581;
+    opacity: 1;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ---------------------------------------------------------
+   2. TYPOGRAFI
+   --------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6, p, span, li, button, input, label,
+.page-title, 
+.section-header h2, 
+.hero-text-block h1,
+.case-intro h1 {
+    font-family: 'Poppins', sans-serif;
 }
 
 
-/* --- 2. HEADER & NAVIGATION (Standard) --- */
+h1, h2, .page-title, .section-header h2, .hero-text-block h1 {
+    font-weight: 300 !important;
+    letter-spacing: 1px;
+}
+
+/* ---------------------------------------------------------
+   3. HEADER & NAVIGATION
+   --------------------------------------------------------- */
 header {
     display: flex;
     justify-content: space-between;
@@ -43,10 +61,9 @@ header {
     padding: 40px 60px;
     width: 100%;
     position: relative;
-    z-index: 100; /* VIGTIGT: Ligger over alt andet */
+    z-index: 100;
 }
 
-/* Logo */
 .logo {
     display: flex;
     align-items: center;
@@ -55,15 +72,14 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 300;
-    color: inherit; /* Arver farven fra sektionen */
+    color: #1a1a1a;
 }
 
 .logo img {
-    height: 40px; 
+    height: 40px;
     width: auto;
 }
 
-/* Menu */
 nav ul {
     display: flex;
     gap: 40px;
@@ -74,69 +90,89 @@ nav a {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-weight: 300; 
+    font-weight: 300;
 }
 
+/* ---------------------------------------------------------
+   4. COMPONENT: BUTTONS
+   --------------------------------------------------------- */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #B4B581;
+    border: 1px solid #B4B581;
+    padding: 16px 32px;
+    transition: all 0.3s ease;
+}
 
-/* --- 3. FORSIDE SPECIFIKT (Den mørke Hero) --- */
+.btn:hover {
+    background-color: #B4B581;
+    color: #F9F7F2;
+}
 
-/* Wrapperen styrer baggrunden og farverne */
+/* ---------------------------------------------------------
+   5. PAGE: FORSIDE (Index)
+   --------------------------------------------------------- */
+/* Hero Section */
 .hero-wrapper {
     position: relative;
-    background-image: url('Billeder/herobillede.jpg'); /* TJEK AT FILNAVNET ER KORREKT */
+    background-image: url('Billeder/herobillede.jpg');
     background-size: cover;
-    background-position: center top;     
-    height: 100vh; 
+    background-position: center top;
+    height: 100vh;
     width: 100%;
-    
-    /* VIGTIGT: Gør tekst hvid som standard herinde */
-    color: #ffffff; 
+    color: #ffffff;
 }
 
-/* Mørkt filter */
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.3);  /* 30% sort filter */
-    z-index: 1; /* Ligger under teksten */
+    background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
 }
 
-/* Specifik regel for MENU og LOGO på forsiden */
 .hero-wrapper nav a,
 .hero-wrapper .logo {
-    color: #ffffff !important; /* Tvinger dem til at være hvide */
+    color: #ffffff !important;
     opacity: 0.9;
 }
 
-/* Hover effekt på forsiden */
 .hero-wrapper nav a:hover {
-    color: #B4B581 !important; /* Grøn ved hover */
+    color: #B4B581 !important;
     opacity: 1;
 }
 
-/* Indholdet (Teksten til højre) */
 .hero-content {
     position: relative;
-    z-index: 2; /* Ligger over filteret */
+    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 0 60px;
-    pointer-events: none; /* Gør at man kan klikke 'igennem' tomme områder */
+    pointer-events: none;
 }
 
 .hero-text-block {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto; /* Skubber til højre */
+    margin: auto 0 auto auto;
     width: 50%;
-    text-align: right; 
-    pointer-events: auto; /* Gør teksten markerbar igen */
+    text-align: right;
+    pointer-events: auto;
+}
+
+.hero-subtitle {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero-text-block h1 {
     font-size: 42px;
-    font-weight: 300; /* Light */
     line-height: 1.3;
     margin-bottom: 20px;
 }
@@ -147,119 +183,341 @@ nav a {
     font-size: 16px;
     opacity: 0.9;
     max-width: 400px;
-    margin-left: auto; /* Højrestiller også brødteksten */
+    margin-left: auto;
 }
 
+.mobile-hero-img {
+    display: none;
+}
 
-/* --- 4. PROJEKTER SIDE --- */
-.page-container {
+.what-i-do-section {
+    padding: 100px 60px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px;
+}
+
+.section-header {
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #444;
+    max-width: 500px;
+    margin: 20px auto 0;
+    font-weight: 300;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    border: 1px solid #d1d1d1;
+    background-color: transparent;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.card-number {
+    font-family: 'Poppins', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #B4B581;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.card-arrow {
+    font-size: 20px;
+    margin-top: auto;
+    color: #1a1a1a;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    background-color: #B4B581;
+    border-color: #B4B581;
+    transform: translateY(-5px);
+}
+
+.service-card:hover h3,
+.service-card:hover p,
+.service-card:hover .card-number,
+.service-card:hover .card-arrow {
+    color: #ffffff;
+}
+
+.service-card:hover .card-arrow {
+    transform: translateX(10px);
+}
+
+/* ---------------------------------------------------------
+   6. PAGE: PROJEKTER
+   --------------------------------------------------------- */
+.page-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 60px;
     width: 100%;
 }
 
 .page-title {
-    font-size: 24px;
-    font-weight: 300;
-    margin-bottom: 60px;
+    font-size: 36px;
+    margin-bottom: 100px;
+    color: #1a1a1a;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 50px;
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
 }
 
-/* Gør hele kortet til et link */
-.project-card {
-    display: block; 
-    cursor: pointer;
+.project-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
 }
 
-.project-card img {
+.project-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.row-image {
+    flex: 1;
+}
+
+.row-image img,
+.row-image video {
     width: 100%;
-    aspect-ratio: 1/1; /* Kvadratisk */
-    object-fit: cover;
+    aspect-ratio: 4/5;
+    object-fit: contain;
     display: block;
-    margin-bottom: 20px;
-    background-color: #ddd; 
-    transition: opacity 0.3s;
+    border: 1px solid #dcdcdc;
+    padding: 30px;
+    background-color: #F9F7F2;
+    transition: transform 0.3s ease;
 }
 
-.project-card:hover img {
-    opacity: 0.8; /* Lille effekt ved hover */
+.row-image:hover img {
+    transform: scale(1.02);
 }
 
-.project-card h3 {
+.row-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.project-title {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+.project-category {
     font-size: 12px;
-    font-weight: 700; 
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-    color: #000;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.project-card p {
-    font-size: 10px;
-    text-transform: uppercase;
-    color: #555;
-    line-height: 1.4;
-}
-.project-card img, 
-.project-card video {
-    width: 100%;
-    aspect-ratio: 1/1;     
-    object-fit: cover;     /* Beskærer indholdet så det udfylder boksen */
-    display: block;
-    margin-bottom: 20px;   /* Sikrer ens afstand ned til teksten */
+.row-text p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+    font-weight: 300;
+    margin-bottom: 15px;
+    max-width: 450px;
 }
 
+/* ---------------------------------------------------------
+   7. PAGE: OM MIG
+   --------------------------------------------------------- */
+.about-header {
+    margin-bottom: 60px;
+    max-width: 800px;
+}
 
-/* --- 5. OM MIG SIDE --- */
+.about-header h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.intro-italic {
+    font-size: 18px;
+    font-style: italic;
+    color: #1a1a1a; 
+    line-height: 1.6;
+    font-weight: 300;
+}
+
 .about-grid {
     display: flex;
-    gap: 80px; 
-    align-items: center; 
+    gap: 60px;
+    align-items: flex-start;
 }
 
 .about-image {
-    flex: 1; 
+    flex: 1;
 }
+
 .about-image img {
     width: 100%;
     height: auto;
     display: block;
-    filter: grayscale(100%); /* Sort/hvid effekt */
+    filter: grayscale(100%);
 }
 
-.about-text {
-    flex: 1; 
+.about-text-content {
+    flex: 1;
+    padding-top: 10px;
 }
 
-.about-text h1 {
-    font-size: 48px;
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-
-.intro-italic {
-    font-style: italic;
-    font-size: 16px;
-    margin-bottom: 30px;
-    display: block;
-    color: #444;
-}
-
-.about-text p {
-    font-size: 14px;
+.about-text-content p {
+    margin-bottom: 25px;
+    font-size: 15px;
     line-height: 1.8;
-    margin-bottom: 20px;
     color: #333;
 }
 
+/* Skills Section */
+.skills-programs {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-/* --- 6. FOOTER --- */
+.skills-programs .section-title {
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 24px;
+}
+
+.program-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.program-item {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #444;
+    border: 1px solid #d1d1d1;
+    padding: 12px 24px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.program-item:hover {
+    border-color: #B4B581;
+    color: #ffffff;
+    background-color: #B4B581;
+    transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   8. PAGE: KONTAKT (Generel styling)
+   --------------------------------------------------------- */
+.simple-contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contact-header h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.contact-header p {
+    font-size: 16px;
+    color: #666;
+    font-weight: 300;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ccc;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.contact-item .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #4A3B32;
+}
+
+.contact-item .value {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    transition: padding-right 0.3s ease;
+}
+
+.contact-item:hover { 
+    border-bottom: 1px solid #B4B581; 
+    padding-left: 10px; 
+}
+
+.contact-item:hover .value { 
+    color: #B4B581; 
+    padding-right: 10px; 
+}
+
+/* ---------------------------------------------------------
+   9. FOOTER
+   --------------------------------------------------------- */
 footer {
     margin-top: auto;
     padding: 80px 60px 40px 60px;
@@ -269,14 +527,13 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
-    border-top: 1px solid #ddd; /* Tynd streg over footeren */
+    border-top: 1px solid #ddd;
     padding-top: 40px;
 }
 
 .footer-col h4 {
     font-size: 11px;
     font-weight: 700;
-    text-transform: uppercase;
     margin-bottom: 20px;
     letter-spacing: 1px;
 }
@@ -297,58 +554,44 @@ footer {
     text-transform: uppercase;
 }
 
-/* --- RESPONSIVITET (MOBIL) --- */
-
-
+/* ---------------------------------------------------------
+   10. MEDIA QUERIES (Mobil & Tablet)
+   --------------------------------------------------------- */
 @media (max-width: 768px) {
 
-    /* --- 1. HEADER / LOGO / MENU --- */
-    /* Gælder både forsiden og undersider */
-    header, 
-    .hero-wrapper header {
-        flex-direction: column; /* Sætter logo øverst, menu nederst */
-        gap: 30px;
-        padding: 30px 20px;
-        align-items: center; /* Centrerer alt */
+    /* --- GLOBAL & HEADER --- */
+    header, .hero-wrapper header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        align-items: center;
     }
-
-    /* Justering af menu-punkterne */
-    nav ul {
-        gap: 25px; /* Lidt mindre afstand mellem ordene */
-        justify-content: center;
-        flex-wrap: wrap; /* Hvis skærmen er meget lille, må de knække */
-    }
-
-    nav a {
-        font-size: 11px; /* Lidt mindre skrift på mobil */
-    }
-
-
-    /* --- 2. FORSIDEN (Hero) --- */
-    /* På din wireframe er forsiden hvid/beige med sort tekst, ikke et stort billede */
     
+    nav ul {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    nav a { 
+        font-size: 11px; 
+    }
+
     .hero-wrapper {
-        height: auto; /* Fjerner den låste fulde højde */
+        height: auto;
         min-height: auto;
         padding-bottom: 60px;
-        
-        /* Vi fjerner baggrundsbilledet og overlayet på mobil for at matche din wireframe */
         background-image: none !important; 
-        background-color: #F9F7F2; /* Din lyse farve */
-        color: #1a1a1a !important; /* Tvinger teksten til at være sort */
-    }
-
-    .hero-overlay {
-        display: none; /* Skjuler det mørke filter */
-    }
-
-    /* Tvinger menu-links til at være sorte på forsiden (fordi baggrunden nu er lys) */
-    .hero-wrapper nav a, 
-    .hero-wrapper .logo {
+        background-color: #F9F7F2; 
         color: #1a1a1a !important;
     }
 
-    /* Teksten på forsiden */
+    .hero-overlay { display: none; }
+    .hero-wrapper nav a, 
+    .hero-wrapper .logo { 
+        color: #1a1a1a !important; 
+    }
+
     .hero-content {
         padding: 0 20px;
         margin-top: 20px;
@@ -356,14 +599,19 @@ footer {
 
     .hero-text-block {
         width: 100%;
-        text-align: left; /* Venstrestillet som på din wireframe */
+        text-align: left;
         margin: 0;
     }
 
     .hero-text-block h1 {
-        font-size: 32px; /* Mindre overskrift */
+        font-size: 32px;
         margin-bottom: 20px;
         color: #1a1a1a;
+    }
+    
+    .hero-subtitle {
+        color: #B4B581;
+        margin-bottom: 10px;
     }
 
     .hero-text-block p {
@@ -371,259 +619,77 @@ footer {
         color: #333;
     }
 
-    /* HVIS DU VIL HAVE ET BILLEDE PÅ MOBIL FORSIDEN: */
-    /* Du skal indsætte et <img> tag i din HTML inde i .hero-content 
-       hvis du vil have billedet mellem tekst og overskrift som på tegningen */
-
-
-    /* --- 3. PROJEKTER (Listen) --- */
-    .project-grid {
-        grid-template-columns: 1fr; /* 1 kolonne i stedet for 3 */
-        gap: 60px; /* God afstand mellem hvert projekt */
-    }
-
-    .page-title {
-        font-size: 40px;
-        margin-bottom: 40px;
-    }
-
-    .project-card h3 {
-        font-size: 14px;
-        margin-top: 15px;
-    }
-
-
-    /* --- 4. OM MIG --- */
-    .about-grid {
-        flex-direction: column; /* Billede og tekst under hinanden */
-        gap: 40px;
-    }
-
-    .about-text h1 {
-        font-size: 32px;
-        text-align: center; /* Centrerer overskriften "MIE MADSEN" */
-    }
-
-    .intro-italic {
-        text-align: center; /* Centrerer intro-teksten */
-        margin-bottom: 40px;
-    }
-
-    /* Rækkefølge: Hvis du vil have teksten over billedet, brug 'column-reverse' herunder.
-       Lige nu viser den Billede først, så Tekst. */
-
-
-    /* --- 5. FOOTER --- */
-    .footer-content {
-        flex-direction: column; /* Stacker elementerne */
-        gap: 40px;
-    }
-
-    /* Venstrestiller både kontakt og socials på mobil */
-    .footer-col {
-        text-align: left !important; 
-    }
-    
-    footer {
-        padding: 40px 20px;
-    }
-}
-
-.mobile-only-img {
-    display: none;
-}
-
-/* Vis det kun på mobil */
-@media (max-width: 768px) {
-    .mobile-only-img {
-        display: block;
-        width: 100%;
-        height: auto;
-        margin-bottom: 30px;
-        filter: grayscale(100%); /* Sort/hvid hvis du ønsker */
-    }
-}
-.mobile-hero-img {
-    display: none;
-}
-
-
-/* --- 2. STYR STØRRELSEN PÅ MOBIL --- */
-@media (max-width: 768px) {
-    
     .mobile-hero-img {
-        display: block; /* Gør det synligt igen */
-        
-        /* Her styrer vi størrelsen: */
-        width: 100%;       /* Fylder bredden ud... */
-        max-width: 350px;  /* ... MEN stopper ved 350px, så det ikke bliver gigantisk */
-        height: auto;      /* Bevarer proportionerne */
-        
-        /* Centrerer billedet */
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        
-        /* Styling (sort/hvid og bløde hjørner) */
+        display: block !important;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0 30px 0;
         filter: grayscale(100%);
         border-radius: 4px;
     }
-}/* --- HARMONIKA (ACCORDION) STYLING --- */
 
-.accordion-container {
-    max-width: 800px; /* Samme bredde som din tekst ellers */
-    margin: 40px auto;
-    border-top: 1px solid #ddd; /* Tynd streg i toppen */
-}
-
-details {
-    border-bottom: 1px solid #ddd; /* Tynd streg under hver boks */
-    padding: 20px 0;
-    cursor: pointer;
-}
-
-/* Selve overskriften man klikker på */
-summary {
-    list-style: none; /* Fjerner den grimme standard-pil */
-    display: flex;
-    justify-content: space-between; /* Skubber + tegnet ud til højre */
-    align-items: center;
-    
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700; /* Fed skrift */
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #1a1a1a;
-}
-
-/* Fjerner standard-pil i nogle browsere (Safari/Chrome) */
-summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Laver et "Plus" tegn ude til højre */
-summary::after {
-    content: '+'; 
-    font-size: 20px;
-    font-weight: 300;
-    transition: transform 0.3s ease; /* Gør at den roterer blødt */
-}
-
-/* Når harmonikaen er åben (OPEN) */
-details[open] summary::after {
-    transform: rotate(45deg); /* Drejer plusset så det bliver et kryds */
-}
-
-details[open] summary {
-    margin-bottom: 15px; /* Lidt luft ned til teksten når den er åben */
-    color: #B4B581; /* Gør overskriften grøn når den er åben (valgfrit) */
-}
-
-/* Selve indholdsteksten */
-.accordion-content p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #444;
-    font-weight: 300;
-    margin: 0;
-    padding-right: 20px; /* Så teksten ikke rammer krydset */
-    
-    /* Lille animation så teksten glider ind */
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- SIMPEL KONTAKT SIDE (List Design) --- */
-
-.simple-contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 100px 20px;
-}
-
-/* Teksten i toppen */
-.contact-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.contact-header h1 {
-    font-size: 42px;
-    font-weight: 300; /* Light / Editorial */
-    margin-bottom: 20px;
-    color: #1a1a1a;
-}
-
-.contact-header p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-/* Listen med links */
-.contact-list {
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid #ccc; /* Start-streg */
-}
-
-/* Hvert enkelt link (Boksen) */
-.contact-item {
-    display: flex;
-    justify-content: space-between; /* Skubber tekst til hver sin side */
-    align-items: center;
-    padding: 30px 0; /* Luft over og under */
-    border-bottom: 1px solid #ccc; /* Streg under hver */
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-/* Venstre tekst (SEND EN MAIL) */
-.contact-item .label {
-    font-size: 12px;
-    font-weight: 700; /* Fed */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #4A3B32; /* Din brune farve */
-}
-
-/* Højre tekst (Adressen + Pil) */
-.contact-item .value {
-    font-size: 14px;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #1a1a1a;
-    transition: padding-right 0.3s ease; /* Gør klar til animation */
-}
-
-/* HOVER EFFEKT */
-.contact-item:hover {
-    padding-left: 10px; /* Hele linjen rykker lidt ind */
-    border-bottom: 1px solid #B4B581; /* Stregen bliver grøn */
-}
-
-.contact-item:hover .value {
-    color: #B4B581; /* Teksten bliver grøn */
-    padding-right: 10px; /* Pilen rykker sig lidt til højre */
-}
-
-/* Mobil Tilpasning */
-@media (max-width: 768px) {
-    .contact-item {
-        flex-direction: column; /* Stacker teksten */
-        gap: 10px;
-        align-items: flex-start; /* Venstrestiller */
+    .what-i-do-section {
+        padding: 60px 20px;
     }
     
-    .contact-header h1 {
-        font-size: 32px;
+    .services-grid {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+
+    .page-container { 
+        padding: 40px 20px; 
+    }
+
+    .projects-list {
+        gap: 60px;
+    }
+    
+    .project-row, 
+    .project-row.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .row-image img {
+        padding: 15px;
+    }
+
+    .about-header h1 { font-size: 36px; }
+
+    .about-grid { 
+        flex-direction: column; 
+        gap: 40px; 
+    }
+    
+    .about-image { width: 100%; }
+    
+    .program-item {
+        padding: 10px 15px;
+        font-size: 11px;
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .contact-item { 
+        flex-direction: column; 
+        gap: 10px; 
+        align-items: flex-start; 
+    }
+    
+    .contact-header h1 { font-size: 32px; }
+
+    footer { 
+        padding: 40px 20px; 
+    }
+    
+    .footer-content { 
+        flex-direction: column; 
+        gap: 40px; 
+    }
+    
+    .footer-col { 
+        text-align: left !important; 
     }
 }
