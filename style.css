@@ -34,9 +34,8 @@ img, video {
     display: block;
 }
 
-/* ---------------------------------------------------------
-   2. TYPOGRAFI
-   --------------------------------------------------------- */
+
+/* TYPOGRAFI*/
 h1, h2, h3, h4, h5, h6, p, span, li, button, input, label,
 .page-title, 
 .section-header h2, 
@@ -51,9 +50,8 @@ h1, h2, .page-title, .section-header h2, .hero-text-block h1 {
     letter-spacing: 1px;
 }
 
-/* ---------------------------------------------------------
-   3. HEADER & NAVIGATION
-   --------------------------------------------------------- */
+
+/*HEADER & NAVIGATION*/
 header {
     display: flex;
     justify-content: space-between;
@@ -93,9 +91,8 @@ nav a {
     font-weight: 300;
 }
 
-/* ---------------------------------------------------------
-   4. COMPONENT: BUTTONS
-   --------------------------------------------------------- */
+
+/*BUTTONS*/
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -114,10 +111,8 @@ nav a {
     color: #F9F7F2;
 }
 
-/* ---------------------------------------------------------
-   5. PAGE: FORSIDE (Index)
-   --------------------------------------------------------- */
-/* Hero Section */
+
+/*FORSIDE (Index)*/
 .hero-wrapper {
     position: relative;
     background-image: url('Billeder/herobillede.jpg');
@@ -131,9 +126,11 @@ nav a {
 .hero-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+    
     z-index: 1;
 }
+
 
 .hero-wrapper nav a,
 .hero-wrapper .logo {
@@ -274,10 +271,12 @@ nav a {
     transform: translateX(10px);
 }
 
-/* ---------------------------------------------------------
-   6. PAGE: PROJEKTER
-   --------------------------------------------------------- */
-.page-container {
+
+/*PROJEKTER*/
+nav a.active {
+    font-weight: 700;
+}
+   .page-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 80px 60px;
@@ -358,9 +357,7 @@ nav a {
     max-width: 450px;
 }
 
-/* ---------------------------------------------------------
-   7. PAGE: OM MIG
-   --------------------------------------------------------- */
+/*OM MIG*/
 .about-header {
     margin-bottom: 60px;
     max-width: 800px;
@@ -408,7 +405,6 @@ nav a {
     color: #333;
 }
 
-/* Skills Section */
 .skills-programs {
     text-align: center;
     padding: 60px 20px;
@@ -450,9 +446,8 @@ nav a {
     transform: translateY(-2px);
 }
 
-/* ---------------------------------------------------------
-   8. PAGE: KONTAKT (Generel styling)
-   --------------------------------------------------------- */
+
+/* KONTAKT */
 .simple-contact-container {
     max-width: 800px;
     margin: 0 auto;
@@ -515,9 +510,8 @@ nav a {
     padding-right: 10px; 
 }
 
-/* ---------------------------------------------------------
-   9. FOOTER
-   --------------------------------------------------------- */
+
+/* FOOTER SEKTION */
 footer {
     margin-top: auto;
     padding: 80px 60px 40px 60px;
@@ -554,12 +548,11 @@ footer {
     text-transform: uppercase;
 }
 
-/* ---------------------------------------------------------
-   10. MEDIA QUERIES (Mobil & Tablet)
-   --------------------------------------------------------- */
+
+/* MEDIA QUERIES (Mobil & Tablet)*/
+
 @media (max-width: 768px) {
 
-    /* --- GLOBAL & HEADER --- */
     header, .hero-wrapper header {
         flex-direction: column;
         gap: 20px;
