@@ -34,8 +34,7 @@ img, video {
     display: block;
 }
 
-
-/* TYPOGRAFI*/
+/*TYPOGRAFI*/
 h1, h2, h3, h4, h5, h6, p, span, li, button, input, label,
 .page-title, 
 .section-header h2, 
@@ -44,12 +43,10 @@ h1, h2, h3, h4, h5, h6, p, span, li, button, input, label,
     font-family: 'Poppins', sans-serif;
 }
 
-
 h1, h2, .page-title, .section-header h2, .hero-text-block h1 {
     font-weight: 300 !important;
     letter-spacing: 1px;
 }
-
 
 /*HEADER & NAVIGATION*/
 header {
@@ -91,8 +88,11 @@ nav a {
     font-weight: 300;
 }
 
+nav a.active {
+    font-weight: 700;
+}
 
-/*BUTTONS*/
+/* BUTTONS*/
 .btn {
     display: inline-block;
     text-decoration: none;
@@ -111,8 +111,7 @@ nav a {
     color: #F9F7F2;
 }
 
-
-/*FORSIDE (Index)*/
+/*HERO (FORSIDE) */
 .hero-wrapper {
     position: relative;
     background-image: url('Billeder/herobillede.jpg');
@@ -127,10 +126,8 @@ nav a {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
-    
     z-index: 1;
 }
-
 
 .hero-wrapper nav a,
 .hero-wrapper .logo {
@@ -187,6 +184,7 @@ nav a {
     display: none;
 }
 
+/*SEKTIONER - SERVICES / HVAD JEG LAVER*/
 .what-i-do-section {
     padding: 100px 60px;
     max-width: 1200px;
@@ -271,12 +269,33 @@ nav a {
     transform: translateX(10px);
 }
 
-
 /*PROJEKTER*/
-nav a.active {
-    font-weight: 700;
+.category-header {
+    text-align: center;
+    margin-top: 150px; 
+    margin-bottom: 80px; 
+    border-top: 1px solid #dcdcdc; 
+    padding-top: 40px;
 }
-   .page-container {
+
+.page-intro {
+    font-size: 16px;
+    color: #444;       
+    max-width: 600px;  
+    margin-bottom: 100px; 
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.category-header h2 {
+    font-size: 28px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a1a1a;
+}
+
+.page-container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 80px 60px;
@@ -357,6 +376,57 @@ nav a.active {
     max-width: 450px;
 }
 
+/*SOCIAL MEDIA GALLERI*/
+.social-gallery-section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 30px; 
+}
+
+.gallery-header h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 300; 
+}
+
+.gallery-header p {
+    font-size: 14px;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.social-item {
+    overflow: hidden; 
+    position: relative;
+    cursor: pointer;
+}
+
+.social-item img, 
+.social-item video {
+    width: 100%;
+    aspect-ratio: 4/5; 
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.5s ease;
+    border-radius: 0; 
+}
+
+.social-item:hover img {
+    transform: scale(1.05);
+}
+
 /*OM MIG*/
 .about-header {
     margin-bottom: 60px;
@@ -405,6 +475,7 @@ nav a.active {
     color: #333;
 }
 
+/* PROGRAMMER JEG BRUGER*/
 .skills-programs {
     text-align: center;
     padding: 60px 20px;
@@ -446,8 +517,7 @@ nav a.active {
     transform: translateY(-2px);
 }
 
-
-/* KONTAKT */
+/* KONTAKT*/
 .simple-contact-container {
     max-width: 800px;
     margin: 0 auto;
@@ -510,8 +580,7 @@ nav a.active {
     padding-right: 10px; 
 }
 
-
-/* FOOTER SEKTION */
+/* FOOTER*/
 footer {
     margin-top: auto;
     padding: 80px 60px 40px 60px;
@@ -548,27 +617,22 @@ footer {
     text-transform: uppercase;
 }
 
-
-/* MEDIA QUERIES (Mobil & Tablet)*/
-
+/*  MEDIA QUERIES*/
 @media (max-width: 768px) {
-
     header, .hero-wrapper header {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
         align-items: center;
     }
-    
+
     nav ul {
         gap: 20px;
         justify-content: center;
         flex-wrap: wrap;
     }
-    
-    nav a { 
-        font-size: 11px; 
-    }
+
+    nav a { font-size: 11px; }
 
     .hero-wrapper {
         height: auto;
@@ -580,15 +644,11 @@ footer {
     }
 
     .hero-overlay { display: none; }
-    .hero-wrapper nav a, 
-    .hero-wrapper .logo { 
-        color: #1a1a1a !important; 
-    }
 
-    .hero-content {
-        padding: 0 20px;
-        margin-top: 20px;
-    }
+    .hero-wrapper nav a, 
+    .hero-wrapper .logo { color: #1a1a1a !important; }
+
+    .hero-content { padding: 0 20px; margin-top: 20px; }
 
     .hero-text-block {
         width: 100%;
@@ -596,21 +656,9 @@ footer {
         margin: 0;
     }
 
-    .hero-text-block h1 {
-        font-size: 32px;
-        margin-bottom: 20px;
-        color: #1a1a1a;
-    }
-    
-    .hero-subtitle {
-        color: #B4B581;
-        margin-bottom: 10px;
-    }
-
-    .hero-text-block p {
-        font-size: 16px;
-        color: #333;
-    }
+    .hero-text-block h1 { font-size: 32px; margin-bottom: 20px; color: #1a1a1a; }
+    .hero-subtitle { color: #B4B581; margin-bottom: 10px; }
+    .hero-text-block p { font-size: 16px; color: #333; }
 
     .mobile-hero-img {
         display: block !important;
@@ -622,67 +670,26 @@ footer {
         border-radius: 4px;
     }
 
-    .what-i-do-section {
-        padding: 60px 20px;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-    }
-
-    .page-container { 
-        padding: 40px 20px; 
-    }
-
-    .projects-list {
-        gap: 60px;
-    }
-    
-    .project-row, 
-    .project-row.reverse {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .row-image img {
-        padding: 15px;
-    }
+    .what-i-do-section { padding: 60px 20px; }
+    .services-grid { grid-template-columns: 1fr; gap: 30px; }
+    .page-container { padding: 40px 20px; }
+    .projects-list { gap: 60px; }
+    .project-row, .project-row.reverse { flex-direction: column; gap: 30px; }
+    .row-image img { padding: 15px; }
 
     .about-header h1 { font-size: 36px; }
-
-    .about-grid { 
-        flex-direction: column; 
-        gap: 40px; 
-    }
-    
+    .about-grid { flex-direction: column; gap: 40px; }
     .about-image { width: 100%; }
-    
-    .program-item {
-        padding: 10px 15px;
-        font-size: 11px;
-        flex-grow: 1;
-        text-align: center;
-    }
 
-    .contact-item { 
-        flex-direction: column; 
-        gap: 10px; 
-        align-items: flex-start; 
-    }
-    
+    .program-item { padding: 10px 15px; font-size: 11px; flex-grow: 1; text-align: center; }
+
+    .contact-item { flex-direction: column; gap: 10px; align-items: flex-start; }
     .contact-header h1 { font-size: 32px; }
 
-    footer { 
-        padding: 40px 20px; 
-    }
-    
-    .footer-content { 
-        flex-direction: column; 
-        gap: 40px; 
-    }
-    
-    .footer-col { 
-        text-align: left !important; 
-    }
+    footer { padding: 40px 20px; }
+    .footer-content { flex-direction: column; gap: 40px; }
+    .footer-col { text-align: left !important; }
+
+    .social-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .social-gallery-section { padding: 40px 20px; }
 }
